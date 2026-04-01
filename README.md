@@ -4,17 +4,6 @@ Minimal setup: **git repo + manual symlink**
 
 ---
 
-## structure
-
-```
-dotfiles/
-├── git/
-├── ssh/
-├── Makefile
-```
-
----
-
 ## rules
 
 * no bare repo
@@ -54,21 +43,6 @@ host → key
 ```
 github-work      → id_ed25519_work
 github-personal  → id_ed25519_personal
-```
-
----
-
-## link (manual)
-
-```
-ln -sfn ~/personal/dotfiles/git/config ~/.config/git/config
-```
-
-if exists:
-
-```
-mv target target.backup
-ln -s source target
 ```
 
 ---
