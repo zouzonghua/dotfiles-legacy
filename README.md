@@ -37,7 +37,7 @@ github-work      → id_ed25519_work
 github-personal  → id_ed25519_personal
 ```
 
-## make (optional helper)
+## make
 
 ```
 make        # setup all
