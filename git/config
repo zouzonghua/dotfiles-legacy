@@ -1,0 +1,14 @@
+[init]
+    defaultBranch = main
+
+[pull]
+    rebase = false
+
+[push]
+    autoSetupRemote = true
+
+[includeIf "gitdir:~/work/"]
+    path = ~/.config/git/work
+
+[includeIf "gitdir:~/personal/"]
+    path = ~/.config/git/personal
