@@ -2,8 +2,6 @@
 
 Minimal setup: **git repo + manual symlink**
 
----
-
 ## rules
 
 * no bare repo
@@ -11,8 +9,6 @@ Minimal setup: **git repo + manual symlink**
 * no install script
 * config only
 * no private keys
-
----
 
 ## bootstrap
 
@@ -23,8 +19,6 @@ git clone https://github.com/zouzonghua/dotfiles.git ~/personal/dotfiles && cd ~
 git remote set-url origin git@github-personal:zouzonghua/dotfiles.git
 ```
 
----
-
 ## git
 
 directory → identity
@@ -34,8 +28,6 @@ directory → identity
 ~/personal  → personal
 ```
 
----
-
 ## ssh
 
 host → key
@@ -44,8 +36,6 @@ host → key
 github-work      → id_ed25519_work
 github-personal  → id_ed25519_personal
 ```
-
----
 
 ## make (optional helper)
 
@@ -62,7 +52,6 @@ behavior:
 * create symlink with `ln -sfn`
 * safe to run multiple times
 
----
 
 ## usage
 
@@ -70,8 +59,6 @@ behavior:
 git clone git@github-work:ORG/REPO.git ~/work/ORG/REPO
 git clone git@github-personal:USER/REPO.git ~/personal/REPO
 ```
-
----
 
 ## note
 
