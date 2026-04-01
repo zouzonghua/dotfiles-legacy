@@ -1,7 +1,0 @@
-distribution_code_name: Squirrel
-distribution_name: "鼠鬚管"
-distribution_version: 0.15.2
-installation_id: sync_config
-rime_version: 1.7.3
-sync_dic: "./Rime/sync/sync_config/luna_pinyin.userdb.txt"
-update_time: "Wed May 25 09:11:09 2022"
