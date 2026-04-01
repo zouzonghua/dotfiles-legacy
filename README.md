@@ -1,0 +1,106 @@
+# dotfiles
+
+Minimal setup: **git repo + manual symlink**
+
+---
+
+## structure
+
+```
+dotfiles/
+├── git/
+├── ssh/
+├── Makefile
+```
+
+---
+
+## rules
+
+* no bare repo
+* no stow / chezmoi
+* no install script
+* config only
+* no private keys
+
+---
+
+## bootstrap
+
+clone and apply:
+
+```
+git clone https://github.com/zouzonghua/dotfiles.git ~/personal/dotfiles && cd ~/personal/dotfiles && make
+git remote set-url origin git@github-personal:zouzonghua/dotfiles.git
+```
+
+---
+
+## git
+
+directory → identity
+
+```
+~/work      → work
+~/personal  → personal
+```
+
+---
+
+## ssh
+
+host → key
+
+```
+github-work      → id_ed25519_work
+github-personal  → id_ed25519_personal
+```
+
+---
+
+## link (manual)
+
+```
+ln -sfn ~/personal/dotfiles/git/config ~/.config/git/config
+```
+
+if exists:
+
+```
+mv target target.backup
+ln -s source target
+```
+
+---
+
+## make (optional helper)
+
+```
+make        # setup all
+make git    # setup git only
+make ssh    # setup ssh only
+```
+
+behavior:
+
+* create target directories if missing
+* backup existing files → `*.backup`
+* create symlink with `ln -sfn`
+* safe to run multiple times
+
+---
+
+## usage
+
+```
+git clone git@github-work:ORG/REPO.git ~/work/ORG/REPO
+git clone git@github-personal:USER/REPO.git ~/personal/REPO
+```
+
+---
+
+## note
+
+* dir decides git identity
+* host decides ssh key
+* keep it simple
