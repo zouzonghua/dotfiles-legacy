@@ -19,24 +19,6 @@ git clone https://github.com/zouzonghua/dotfiles.git ~/personal/dotfiles && cd ~
 git remote set-url origin git@github-personal:zouzonghua/dotfiles.git
 ```
 
-## git
-
-directory → identity
-
-```
-~/work      → work
-~/personal  → personal
-```
-
-## ssh
-
-host → key
-
-```
-github-work      → id_ed25519_work
-github-personal  → id_ed25519_personal
-```
-
 ## make
 
 ```
