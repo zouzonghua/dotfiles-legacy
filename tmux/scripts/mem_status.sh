@@ -1,25 +1,3 @@
-# #!/bin/bash
-# C_NORMAL=${1:-"colour121"}
-# C_WARN=${2:-"colour220"} # C_CRIT=${3:-"colour197"}
-# 
-# if [[ "$OSTYPE" == "darwin"* ]]; then
-#     MEM_TOTAL_GB=$(sysctl -n hw.memsize | awk '{print $1/1024/1024/1024}')
-#     PAGE_SIZE=$(vm_stat | grep "page size of" | awk '{print $8}')
-#     PAGES_USED=$(vm_stat | awk '/Pages active/ {print $3} /Pages speculative/ {print $3} /Pages wired down/ {print $3} /Pages occupied by compressor/ {print $3}' | sed 's/\.//' | awk '{s+=$1} END {print s}')
-#     MEM_USED_GB=$(awk -v p="$PAGES_USED" -v s="$PAGE_SIZE" 'BEGIN {print (p*s)/1024/1024/1024}')
-# else
-#     MEM_TOTAL_GB=$(free -g | awk '/^Mem:/{print $2}')
-#     MEM_USED_GB=$(free -g | awk '/^Mem:/{print $3}')
-# fi
-# 
-# PCT=$(awk -v u="$MEM_USED_GB" -v t="$MEM_TOTAL_GB" 'BEGIN {printf "%.0f", (u/t)*100}')
-# PCT_STR=$(awk -v u="$MEM_USED_GB" -v t="$MEM_TOTAL_GB" 'BEGIN {printf "%.1f", (u/t)*100}')
-# 
-# if [ "$PCT" -gt 85 ]; then COLOR="colour${C_CRIT#colour}"; elif [ "$PCT" -gt 60 ]; then COLOR="colour${C_WARN#colour}"; else COLOR="colour${C_NORMAL#colour}"; fi
-# 
-# #echo "#[fg=$COLOR,bold]MEM: ${PCT_STR}%#[default]"
-# echo "#[fg=$COLOR]MEM: ${PCT_STR}%#[default]"
-
 #!/bin/bash
 # 接收 256 色参数
 normalize_color() {

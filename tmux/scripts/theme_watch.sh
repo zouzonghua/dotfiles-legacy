@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Watch macOS appearance changes and refresh tmux theme.
-INTERVAL=2
+INTERVAL=5
 LAST_MODE=""
 
 existing_pid=$(tmux show-environment -g TMUX_THEME_WATCHER_PID 2>/dev/null | sed 's/^[^=]*=//')

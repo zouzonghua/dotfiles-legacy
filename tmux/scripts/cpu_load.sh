@@ -1,27 +1,3 @@
-# #!/bin/bash
-# # 接收参数: $1=正常颜色, $2=警告颜色, $3=高压颜色
-# C_NORMAL=${1:-"colour121"}
-# C_WARN=${2:-"colour220"}
-# C_CRIT=${3:-"colour197"}
-# 
-# if [[ "$OSTYPE" == "darwin"* ]]; then
-#     CPUS=$(sysctl -n hw.ncpu)
-#     LOADS=$(uptime | awk -F'load averages: ' '{print $2}' | sed 's/,//g')
-# else
-#     CPUS=$(nproc)
-#     LOADS=$(uptime | awk -F'load average: ' '{print $2}' | sed 's/,//g')
-# fi
-# 
-# L1=$(echo $LOADS | awk '{print $1}')
-# PCT_VAL=$(awk -v l="$L1" -v c="$CPUS" 'BEGIN {printf "%.0f", (l/c)*100}')
-# 
-# # 根据阈值选择颜色变量
-# if [ "$PCT_VAL" -gt 80 ]; then COLOR="colour${C_CRIT#colour}"; elif [ "$PCT_VAL" -gt 50 ]; then COLOR="colour${C_WARN#colour}"; else COLOR="colour${C_NORMAL#colour}"; fi
-# 
-# CPU_STR=$(echo "$LOADS" | awk -v cpus="$CPUS" '{printf "%.1f%% %.1f%% %.1f%%", $1/cpus*100, $2/cpus*100, $3/cpus*100}')
-# # echo "#[fg=$COLOR,bold]CPU: ${CPU_STR}#[default]"
-# echo "#[fg=$COLOR]CPU: ${CPU_STR}#[default]"
-
 #!/bin/bash
 # 接收参数: $1=正常, $2=警告, $3=高压 (均为 256 色代号)
 normalize_color() {
