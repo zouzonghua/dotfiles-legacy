@@ -1,3 +1,4 @@
 [user]
     name = zouzonghua
     email = zouzonghua.cn@gmail.com
+    signingkey = ~/.ssh/id_ed25519_personal.pub
