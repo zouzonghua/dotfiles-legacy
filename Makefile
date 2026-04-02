@@ -3,12 +3,13 @@ SHELL := /bin/bash
 DOTFILES := $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
 
 GIT_DIR := $(HOME)/.config/git
+TMUX_DIR := $(HOME)/.config/tmux
 SSH_DIR := $(HOME)/.ssh
 VIMRC := $(HOME)/.vimrc
 
-.PHONY: git ssh vim all
+.PHONY: git tmux ssh vim all
 
-all: git ssh vim
+all: git tmux ssh vim
 
 define link_file
 	@if [ -e $(2) ] && [ ! -L $(2) ]; then \
@@ -23,6 +24,12 @@ git:
 	$(call link_file,$(DOTFILES)/git/config,$(GIT_DIR)/config)
 	$(call link_file,$(DOTFILES)/git/work,$(GIT_DIR)/work)
 	$(call link_file,$(DOTFILES)/git/personal,$(GIT_DIR)/personal)
+
+tmux:
+	@mkdir -p $(TMUX_DIR)
+	$(call link_file,$(DOTFILES)/tmux/tmux.conf,$(TMUX_DIR)/tmux.conf)
+	$(call link_file,$(DOTFILES)/tmux/conf,$(TMUX_DIR)/conf)
+	$(call link_file,$(DOTFILES)/tmux/scripts,$(TMUX_DIR)/scripts)
 
 ssh:
 	@mkdir -p $(SSH_DIR)
