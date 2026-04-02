@@ -52,16 +52,3 @@ behavior:
 * create symlink with `ln -sfn`
 * safe to run multiple times
 
-
-## usage
-
-```
-git clone git@github-work:ORG/REPO.git ~/work/ORG/REPO
-git clone git@github-personal:USER/REPO.git ~/personal/REPO
-```
-
-## note
-
-* dir decides git identity
-* host decides ssh key
-* keep it simple
